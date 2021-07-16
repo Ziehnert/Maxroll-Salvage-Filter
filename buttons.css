@@ -1,0 +1,16 @@
+button {
+    cursor: pointer !important; 
+    font-weight: 500 !important; 
+    border: none !important; 
+    color: white !important; 
+    padding: 10px 19px !important; 
+    text-align: center !important; 
+    text-decoration: none !important; 
+    display: inline-block !important; 
+    font-size: 16px !important; 
+    background-color: #057af0;
+    border-radius: 0!important;
+    border: 0!important;
+    border-right: 1px solid #111!important;
+    border-left: 1px solid #111!important;
+}

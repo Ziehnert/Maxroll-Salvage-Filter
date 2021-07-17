@@ -6,23 +6,48 @@ var buttonCrus = document.createElement("button");
 var buttonWD = document.createElement("button");
 var buttonWiz = document.createElement("button");
 
-buttonMonk.innerHTML = "Monk";
-buttonNec.innerHTML = "Necro";
-buttonDH.innerHTML = "Demonhunter";
-buttonBarb.innerHTML = "Barbarian";
-buttonCrus.innerHTML = "Crusader";
-buttonWD.innerHTML = "Witchdoctor";
-buttonWiz.innerHTML = "Wizard";
+function ButtonNames(lang) {
+    if (lang === "EN") {
+        buttonMonk.innerHTML = "Monk";
+        buttonNec.innerHTML = "Necro";
+        buttonDH.innerHTML = "Demonhunter";
+        buttonBarb.innerHTML = "Barbarian";
+        buttonCrus.innerHTML = "Crusader";
+        buttonWD.innerHTML = "Witchdoctor";
+        buttonWiz.innerHTML = "Wizard";
+    } else if (lang === "DE") {
+        buttonMonk.innerHTML = "Mönch";
+        buttonNec.innerHTML = "Totenbeschwörer";
+        buttonDH.innerHTML = "Dämonenjäger";
+        buttonBarb.innerHTML = "Barbar";
+        buttonCrus.innerHTML = "Kreuzritter";
+        buttonWD.innerHTML = "Hexendoktor";
+        buttonWiz.innerHTML = "Zauberer";
+    }
+}
 
-var ButtonPlace = document.getElementById("Core-Items-to-Keep");
-ButtonPlace.appendChild(document.createElement("br"));
-ButtonPlace.appendChild(buttonMonk);
-ButtonPlace.appendChild(buttonNec);
-ButtonPlace.appendChild(buttonDH);
-ButtonPlace.appendChild(buttonBarb);
-ButtonPlace.appendChild(buttonCrus);
-ButtonPlace.appendChild(buttonWD);
-ButtonPlace.appendChild(buttonWiz);
+function CreateButtons(ButtonPlace) {
+
+    ButtonPlace.appendChild(document.createElement("br"));
+    ButtonPlace.appendChild(buttonMonk);
+    ButtonPlace.appendChild(buttonNec);
+    ButtonPlace.appendChild(buttonDH);
+    ButtonPlace.appendChild(buttonBarb);
+    ButtonPlace.appendChild(buttonCrus);
+    ButtonPlace.appendChild(buttonWD);
+    ButtonPlace.appendChild(buttonWiz);
+}
+
+try {
+    var ButtonLocation = document.getElementById("Core-Items-to-Keep")
+    ButtonNames("EN")
+    CreateButtons(ButtonLocation)
+} catch {
+    var ButtonLocation = document.getElementById("Zu-behalten")
+    ButtonNames("DE")
+    CreateButtons(ButtonLocation)
+    
+}
 
 function Monk(action) {
 

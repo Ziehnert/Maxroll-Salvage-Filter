@@ -49,65 +49,11 @@ try {
     
 }
 
-function Monk(action) {
+function ClassColumn(action, classID) {
 
-    var MonkColumns = document.getElementsByClassName('has-inline-color has-rare-item-color');
-    for (let i = 0; i < MonkColumns.length; i++) {
-        var j = MonkColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function Necromancer(action) {
-
-    var NecromancerColumns = document.getElementsByClassName('has-inline-color has-death-breath-color');
-    for (let i = 0; i < NecromancerColumns.length; i++) {
-        var j = NecromancerColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function DH(action) {
-
-    var DHColumns = document.getElementsByClassName('has-inline-color has-light-red-color');
-    for (let i = 0; i < DHColumns.length; i++) {
-        var j = DHColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function Barbarian(action) {
-
-    var BarbarianColumns = document.getElementsByClassName('has-inline-color has-mid-orange-color');
-    for (let i = 0; i < BarbarianColumns.length; i++) {
-        var j = BarbarianColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function Crusader(action) {
-
-    var CrusaderColumns = document.getElementsByClassName('has-inline-color has-common-item-color');
-    for (let i = 0; i < CrusaderColumns.length; i++) {
-        var j = CrusaderColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function Witchdoctor(action) {
-
-    var WitchdoctorColumns = document.getElementsByClassName('has-inline-color has-deep-green-color');
-    for (let i = 0; i < WitchdoctorColumns.length; i++) {
-        var j = WitchdoctorColumns[i].closest("tr"); 
-        j.style.display = action
-    }
-}
-
-function Wizard(action) {
-
-    var WizardColumns = document.getElementsByClassName('has-inline-color has-mid-purple-color');
-    for (let i = 0; i < WizardColumns.length; i++) {
-        var j = WizardColumns[i].closest("tr"); 
+    var TableColumns = document.getElementsByClassName('has-inline-color ' + classID);
+    for (let i = 0; i < TableColumns.length; i++) {
+        var j = TableColumns[i].closest("tr"); 
         j.style.display = action
     }
 }
@@ -115,10 +61,10 @@ function Wizard(action) {
 buttonMonk.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Monk("");
+        ClassColumn("", "has-rare-item-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Monk("none");
+        ClassColumn("none", "has-rare-item-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -126,10 +72,10 @@ buttonMonk.addEventListener ("click", function() {
 buttonNec.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Necromancer("");
+        ClassColumn("", "has-death-breath-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Necromancer("none");
+        ClassColumn("none", "has-death-breath-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -137,10 +83,10 @@ buttonNec.addEventListener ("click", function() {
 buttonDH.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        DH("");
+        ClassColumn("", "has-light-red-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        DH("none");
+        ClassColumn("none", "has-light-red-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -148,10 +94,10 @@ buttonDH.addEventListener ("click", function() {
 buttonBarb.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Barbarian("");
+        ClassColumn("", "has-mid-orange-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Barbarian("none");
+        ClassColumn("none", "has-mid-orange-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -159,10 +105,10 @@ buttonBarb.addEventListener ("click", function() {
 buttonCrus.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Crusader("");
+        ClassColumn("", "has-common-item-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Crusader("none");
+        ClassColumn("none", "has-common-item-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -170,10 +116,10 @@ buttonCrus.addEventListener ("click", function() {
 buttonWD.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Witchdoctor("");
+        ClassColumn("", "has-deep-green-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Witchdoctor("none");
+        ClassColumn("none", "has-deep-green-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
@@ -181,10 +127,10 @@ buttonWD.addEventListener ("click", function() {
 buttonWiz.addEventListener ("click", function() {
     
     if (this.style.backgroundColor == "rgb(71, 71, 71)"){
-        Wizard("");
+        ClassColumn("", "has-mid-purple-color");
         this.style.backgroundColor = "rgb(5, 122, 240)"
     } else {
-        Wizard("none");
+        ClassColumn("none", "has-mid-purple-color");
         this.style.backgroundColor = "rgb(71, 71, 71)"
     }
   });
